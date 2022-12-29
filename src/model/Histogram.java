@@ -1,20 +1,20 @@
 package model;
 
-import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
 
 public class Histogram<T> {
-    private final Map<T,Integer> mapa = new HashMap<>();
+    private final HashMap<T,Integer> map = new HashMap();
 
-    public Integer get(T key){
-        return mapa.get(key);
+    public int get(T key){
+        return map.get(key);
     }
 
-    public Set<T> keySet(){
-        return mapa.keySet();
+    public Set<T> keySet() {
+        return map.keySet();
     }
-    void increment(T key) {
-        mapa.put(key, mapa.containsKey(key) ? mapa.get(key) +1 :1);
+
+    public void increment(T key){
+        map.put(key, map.containsKey(key) ? map.get(key) + 1 : 1);
     }
 }
